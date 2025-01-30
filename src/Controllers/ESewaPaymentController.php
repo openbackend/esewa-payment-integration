@@ -1,10 +1,10 @@
 <?php
 
-namespace Rudraramesh\ESewaPayment\Controllers;
+namespace Rbb\ESewaPayment\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Rudraramesh\ESewaPayment\Services\ESewaPaymentService;
+use Rbb\ESewaPayment\Services\ESewaPaymentService;
 
 class ESewaPaymentController extends Controller
 {

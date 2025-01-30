@@ -1,6 +1,6 @@
 <?php
 
-namespace Rudraramesh\ESewaPayment\Services;
+namespace Rbb\ESewaPayment\Services;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;

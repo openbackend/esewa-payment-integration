@@ -1,6 +1,6 @@
 <?php
 
-namespace Rudraramesh\ESewaPayment\Providers;
+namespace Rbb\ESewaPayment\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

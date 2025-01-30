@@ -18,7 +18,7 @@ A simple and easy-to-use Laravel package to integrate the eSewa payment gateway 
 
 2. Publish Configuration File
    ```bash
-   php artisan vendor:publish --provider="Rudraramesh\EsewaPayment\Providers\ESewaPaymentServiceProvider" --tag=config
+   php artisan vendor:publish --provider="Rbb\EsewaPayment\Providers\ESewaPaymentServiceProvider" --tag=config
 
 3. Add Configuration to .env
    ```bash
@@ -51,7 +51,7 @@ Add the routes to your routes/web.php file. These routes will handle the payment
 * web.php file
     ```bash
 
-    use Rudraramesh\EsewaPayment\Controllers\ESewaPaymentController;
+    use Rbb\EsewaPayment\Controllers\ESewaPaymentController;
 
     Route::get('initiate-payment', [ESewaPaymentController::class, 'initiatePayment']);
     Route::get('payment-callback', [ESewaPaymentController::class, 'paymentCallback']);
@@ -63,7 +63,7 @@ In your Laravel controller, you can initiate the payment process and handle the 
 
     namespace App\Http\Controllers;
 
-    use Rudraramesh\EsewaPayment\Controllers\ESewaPaymentController;
+    use Rbb\EsewaPayment\Controllers\ESewaPaymentController;
     use Illuminate\Http\Request;
 
     class PaymentController extends Controller

@@ -17,8 +17,9 @@
     },
     "authors": [
         {
-            "name": "Rudra Ramesh",
-            "email": "baduwalramesh98@gmail.com"
+            "name": "Ramesh Baduwal",
+            "email": "baduwalramesh98@gmail.com",
+            "homepage": "https://github.com/RudraRamesh"
         }
     ],
     "repositories": [
@@ -32,7 +33,5 @@
         "php": "^7.4 || ^8.0",
         "laravel/framework": "^9.0 || ^10.0 || ^11.0",
         "illuminate/support": "^9.0 || ^10.0"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }

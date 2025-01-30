@@ -1,3 +1,4 @@
 .env
 /vendor/
 # README.md
+composer.lock

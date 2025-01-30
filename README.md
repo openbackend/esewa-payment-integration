@@ -8,7 +8,7 @@ A simple and easy-to-use Laravel package to integrate the eSewa payment gateway 
 * Easily integrate the eSewa payment gateway into your Laravel project.
 * Supports payment initiation, transaction verification, and callback handling.
 * Simple configuration with environment variables for secure API keys.
-* Compatible with Laravel 8.x, 9.x, and higher.
+* Compatible with Laravel 9.x, 10.x, and higher.
 
 ## Installation
 1.  Install the Package:
@@ -118,7 +118,7 @@ You can also test the callback functionality by simulating a callback to the /pa
 * Make sure that the API keys and merchant credentials are correct and set in the .env file.
 * You can customize the logic in the ESewaPaymentController to fit your payment workflow.
 * The package assumes youre handling both success and failure URLs on your site and can manage the response accordingly.
-* This package is compatible with Laravel versions 8.x, 9.x, and above.
+* This package is compatible with Laravel versions 9.x, 10.x, and above.
 
 
 # Contributing
@@ -126,7 +126,7 @@ If you want to contribute to the development of this package, feel free to fork 
 
 
 # License
-This package is open-sourced under the MIT License. See the [License File](LICENSE) file for more information.
+This package is open-sourced under the MIT License. See the [LICENSE File](LICENSE) file for more information.
 
 
 

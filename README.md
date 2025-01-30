@@ -5,10 +5,10 @@ A simple and easy-to-use Laravel package to integrate the eSewa payment gateway 
 
 
 ## Features
-    * Easily integrate the eSewa payment gateway into your Laravel project.
-    * Supports payment initiation, transaction verification, and callback handling.
-    * Simple configuration with environment variables for secure API keys.
-    * Compatible with Laravel 7.x, 8.x, and higher.
+* Easily integrate the eSewa payment gateway into your Laravel project.
+* Supports payment initiation, transaction verification, and callback handling.
+* Simple configuration with environment variables for secure API keys.
+* Compatible with Laravel 7.x, 8.x, and higher.
 
 ## Installation
 1.  Install the Package:
@@ -21,6 +21,7 @@ A simple and easy-to-use Laravel package to integrate the eSewa payment gateway 
    php artisan vendor:publish --provider="Rudraramesh\EsewaPayment\Providers\ESewaPaymentServiceProvider" --tag=config
 
 3. Add Configuration to .env
+   
    ```bash
     ESewa_MERCHANT_CODE=your_merchant_code
     ESewa_API_KEY=your_api_key
@@ -31,6 +32,7 @@ A simple and easy-to-use Laravel package to integrate the eSewa payment gateway 
 
 # Configuration File
 The package will use the config/esewa.php configuration file to manage settings like the merchant code, API credentials, and URLs for payment success, failure, and callback.
+    
     ```bash
     
     return [
@@ -46,6 +48,7 @@ The package will use the config/esewa.php configuration file to manage settings 
 
 ## step 1. Add Routes
 Add the routes to your routes/web.php file. These routes will handle the payment initiation and callback from eSewa.
+    
     ```bash
 
     use Rudraramesh\EsewaPayment\Controllers\ESewaPaymentController;
@@ -55,6 +58,7 @@ Add the routes to your routes/web.php file. These routes will handle the payment
 
 ## step 2. Create Controller for Payment Integration
 In your Laravel controller, you can initiate the payment process and handle the callback like so:
+        
         ```bash
 
         namespace App\Http\Controllers;
@@ -79,6 +83,7 @@ In your Laravel controller, you can initiate the payment process and handle the 
 
 ## step 3. Handle Payment Initiation
 The ESewaPaymentController includes a method for initiating the payment:
+    
     ```bash
     public function initiatePayment(Request $request)
     {
@@ -92,6 +97,7 @@ The ESewaPaymentController includes a method for initiating the payment:
 ## step 4. Handle Payment Callback
 
 Once the payment is completed (or fails), eSewa will send a callback to the provided callback URL. You can handle the callback response like so:
+    
     ```bash
 
     public function paymentCallback(Request $request)

@@ -1,0 +1,37 @@
+{
+    "name": "rudraramesh/esewa-payment",
+    "description": "A Laravel package designed to simplify the integration of the eSewa payment gateway into your Laravel applications. This package provides an easy-to-use solution for handling online payments with eSewa, one of Nepal's leading payment gateways. It supports initiating payments, verifying transactions, and handling payment success or failure.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Rudraramesh\\EsewaPayment\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rudraramesh\\EsewaPayment\\Providers\\ESewaPaymentServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Rudra Ramesh",
+            "email": "baduwalramesh98@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/rudraramesh/esewa-payment-integration"
+        }
+    ],
+
+    "require": {
+        "php": "^7.4|^8.0|^9.0|^10.0|^11.0",
+        "illuminate/support": "^8.0|^9.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

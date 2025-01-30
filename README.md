@@ -31,6 +31,8 @@ A simple and easy-to-use Laravel package to integrate the eSewa payment gateway 
 
 # Configuration File
 The package will use the config/esewa.php configuration file to manage settings like the merchant code, API credentials, and URLs for payment success, failure, and callback.
+
+1. esewa.php file
     ```bash
 
     return [
@@ -46,6 +48,7 @@ The package will use the config/esewa.php configuration file to manage settings 
 
 ## step 1. Add Routes
 Add the routes to your routes/web.php file. These routes will handle the payment initiation and callback from eSewa.
+* web.php file
     ```bash
 
     use Rudraramesh\EsewaPayment\Controllers\ESewaPaymentController;
@@ -55,30 +58,32 @@ Add the routes to your routes/web.php file. These routes will handle the payment
 
 ## step 2. Create Controller for Payment Integration
 In your Laravel controller, you can initiate the payment process and handle the callback like so:
-        ```bash
+* controller Method
+    ```bash
 
-        namespace App\Http\Controllers;
+    namespace App\Http\Controllers;
 
-        use Rudraramesh\EsewaPayment\Controllers\ESewaPaymentController;
-        use Illuminate\Http\Request;
+    use Rudraramesh\EsewaPayment\Controllers\ESewaPaymentController;
+    use Illuminate\Http\Request;
 
-        class PaymentController extends Controller
+    class PaymentController extends Controller
+    {
+        public function initiatePayment(Request $request)
         {
-            public function initiatePayment(Request $request)
-            {
-                // Here, you can call your payment initiation logic
-                return (new ESewaPaymentController())->initiatePayment($request);
-            }
-
-            public function paymentCallback(Request $request)
-            {
-                // Handle the callback from eSewa for payment success/failure
-                return (new ESewaPaymentController())->paymentCallback($request);
-            }
+            // Here, you can call your payment initiation logic
+            return (new ESewaPaymentController())->initiatePayment($request);
         }
+
+        public function paymentCallback(Request $request)
+        {
+            // Handle the callback from eSewa for payment success/failure
+            return (new ESewaPaymentController())->paymentCallback($request);
+        }
+    }
 
 ## step 3. Handle Payment Initiation
 The ESewaPaymentController includes a method for initiating the payment:
+* PaymentController
     ```bash
     public function initiatePayment(Request $request)
     {
@@ -92,8 +97,8 @@ The ESewaPaymentController includes a method for initiating the payment:
 ## step 4. Handle Payment Callback
 
 Once the payment is completed (or fails), eSewa will send a callback to the provided callback URL. You can handle the callback response like so:
+* payment callback handle
     ```bash
-
     public function paymentCallback(Request $request)
     {
         // Handle eSewa payment callback, verify payment, and update your system.

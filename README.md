@@ -118,7 +118,7 @@ You can also test the callback functionality by simulating a callback to the /pa
 * Make sure that the API keys and merchant credentials are correct and set in the .env file.
 * You can customize the logic in the ESewaPaymentController to fit your payment workflow.
 * The package assumes youre handling both success and failure URLs on your site and can manage the response accordingly.
-* This package is compatible with Laravel versions 7.x, 8.x, and above.
+* This package is compatible with Laravel versions 8.x, 9.x, and above.
 
 
 # Contributing
@@ -126,7 +126,7 @@ If you want to contribute to the development of this package, feel free to fork 
 
 
 # License
-This package is open-sourced under the MIT License. See the LICENSE file for more information.
+This package is open-sourced under the MIT License. See the [License File](LICENSE) file for more information.
 
 
 

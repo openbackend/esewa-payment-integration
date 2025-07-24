@@ -5,13 +5,13 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Rbb\\EsewaPayment\\": "src/"
+            "Rbb\\ESewaPayment\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Rbb\\EsewaPayment\\Providers\\ESewaPaymentServiceProvider"
+                "Rbb\\ESewaPayment\\Providers\\ESewaPaymentServiceProvider"
             ]
         }
     },

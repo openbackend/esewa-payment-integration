@@ -4,14 +4,15 @@ namespace Rbb\ESewaPayment\Services;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+use function config;
 
 class ESewaPaymentService
 {
     public function generatePaymentUrl($amount, $orderId)
     {
         $merchantCode = config('esewa.merchant_code');
-        $apiKey = config('esewa.api_key');
-        $apiPassword = config('esewa.api_password');
+        $environment = config('esewa.environment', 'sandbox');
+        $endpoint = config('esewa.endpoints.' . $environment);
 
         $params = [
             'amt' => $amount,
@@ -23,19 +24,37 @@ class ESewaPaymentService
         ];
 
         // Construct the eSewa payment URL
-        return "https://www.esewa.com.np/epay/main?" . http_build_query($params);
+        return $endpoint . '?' . http_build_query($params);
     }
 
+    /**
+     * Verify payment with eSewa server (server-to-server verification)
+     */
     public function verifyPayment($data)
     {
-        // Example verification logic (simplified)
-        $amount = $data['amt'];
-        $orderId = $data['pid'];
-        $responseCode = $data['respcd'];
+        $environment = config('esewa.environment', 'sandbox');
+        $verifyEndpoint = $environment === 'live'
+            ? 'https://www.esewa.com.np/epay/transrec'
+            : 'https://uat.esewa.com.np/epay/transrec';
 
-        if ($responseCode === '0000') {
-            // Handle success (store order payment status, etc.)
-            return true;
+        $params = [
+            'amt' => $data['amt'] ?? null,
+            'scd' => config('esewa.merchant_code'),
+            'pid' => $data['pid'] ?? null,
+            'rid' => $data['refId'] ?? $data['rid'] ?? null,
+        ];
+
+        try {
+            $response = Http::asForm()->post($verifyEndpoint, $params);
+            $body = $response->body();
+            Log::info('eSewa verification response', ['body' => $body]);
+
+            // eSewa returns XML. Check for <response_code>Success</response_code>
+            if (strpos($body, '<response_code>Success</response_code>') !== false) {
+                return true;
+            }
+        } catch (\Exception $e) {
+            Log::error('eSewa verification failed', ['error' => $e->getMessage()]);
         }
 
         return false;

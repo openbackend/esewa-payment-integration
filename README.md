@@ -1,14 +1,18 @@
-# eSewa Payment Integration for Laravel
+# Laravel eSewa Payment Gateway Integration
 
-A simple and easy-to-use Laravel package to integrate the eSewa payment gateway into your application. This package handles payment initiation, transaction verification (with server-to-server verification), and success or failure responses using eSewa, a leading payment gateway in Nepal.
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/rudraramesh/esewa-payment.svg?style=flat-square)](https://packagist.org/packages/rudraramesh/esewa-payment)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+A Laravel package for seamless integration of the [eSewa](https://esewa.com.np) payment gateway, the leading online payment solution in Nepal. Easily accept online payments in your Laravel application using eSewa, with secure server-to-server verification and customizable success/failure pages.
 
 ## Features
-* Easily integrate the eSewa payment gateway into your Laravel project.
-* Supports payment initiation, transaction verification (server-to-server), and callback handling.
-* Simple configuration with environment variables for secure API keys.
-* Supports both sandbox and live environments.
-* Extensible: fires events on payment success/failure.
-* Compatible with Laravel 9.x, 10.x, and higher.
+- Laravel eSewa payment gateway integration
+- Supports online payments in Nepal
+- Secure server-to-server transaction verification
+- Easy configuration and setup
+- Customizable success and failure views
+- Compatible with Laravel 9, 10, 11, 12 and PHP 7.4, 8.x
+- Extensible: fires events on payment success/failure
 
 ## Installation
 1.  Install the Package:
@@ -98,6 +102,12 @@ Set `ESEWA_ENVIRONMENT=sandbox` for testing, or `live` for production. The packa
 - Input is validated before initiating payment.
 - All errors are logged using Laravel's logger.
 - Server-to-server verification is performed for security.
+
+## Links
+- [eSewa Official Website](https://esewa.com.np)
+- [Packagist Package](https://packagist.org/packages/rudraramesh/esewa-payment)
+- [GitHub Repository](https://github.com/RudraRamesh/esewa-payment)
+- [Report Issues](https://github.com/RudraRamesh/esewa-payment/issues)
 
 ## Contributing
 Feel free to fork the repository and create pull requests. Please follow best practices and write tests if you add new features.

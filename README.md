@@ -13,7 +13,7 @@ A simple and easy-to-use Laravel package to integrate the eSewa payment gateway 
 ## Installation
 1.  Install the Package:
     ```bash
-    composer require rbb/esewa-payment
+    composer require rudraramesh/esewa-payment
     ```
 
 2. Publish Configuration and Views

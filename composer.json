@@ -1,5 +1,5 @@
 {
-    "name": "rbb/esewa-payment",
+    "name": "rudraramesh/esewa-payment",
     "description": "A Laravel package designed to simplify the integration of the eSewa payment gateway into your Laravel applications. This package provides an easy-to-use solution for handling online payments with eSewa, one of Nepal's leading payment gateways. It supports initiating payments, verifying transactions, and handling payment success or failure.",
     "type": "library",
     "license": "MIT",

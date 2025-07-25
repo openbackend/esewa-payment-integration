@@ -1,5 +1,7 @@
 # Laravel eSewa Payment Gateway Integration
 
+**Current Version:** v2.0.0
+
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/rudraramesh/esewa-payment.svg?style=flat-square)](https://packagist.org/packages/rudraramesh/esewa-payment)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
